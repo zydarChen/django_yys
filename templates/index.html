@@ -7,21 +7,24 @@
     <!-- meta -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- css -->
 {#    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">#}
-    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="{% static 'css/pace.css' %}">
-    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+{#    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">#}
+{#    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">#}
+{#    <link rel="stylesheet" href="{% static 'css/pace.css' %}">#}
+{#    <link rel="stylesheet" href="{% static 'css/custom.css' %}">#}
 
     <!-- js -->
 {#    <script src="{% static 'js/jquery-2.1.3.min.js' %}"></script>#}
-    <script src="https://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+{#    <script src="https://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>#}
 {#    <script src="{% static 'js/bootstrap.min.js' %}"></script>#}
-    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="{% static 'js/pace.min.js' %}"></script>
-    <script src="{% static 'js/modernizr.custom.js' %}"></script>
+{#    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>#}
+{#    <script src="{% static 'js/pace.min.js' %}"></script>#}
+{#    <script src="{% static 'js/modernizr.custom.js' %}"></script>#}
 </head>
 
 <body>
@@ -30,23 +33,25 @@
         <div class="row">
             <div class="col-md-4 col-sm-5 col-xs-8">
                 <div class="logo">
-                    <h1><a href="index0.html"><b>碎片登记</b></a></h1>
+                    <h1><a href="index.html"><b>碎片登记</b></a></h1>
                 </div>
             </div><!-- col-md-4 -->
 
         </div>
     </header>
-    <h3>重要说明：</h3>
-    <h4>- 请在你想要换的SSR下面对应写上“想要”</h4>
-    <h4>- 当自身碎片变化时请及时更新，更新时只需填写改变项</h4>
-    <h4>- 奴良轩轩各种碎片求换雪童子！！！</h4>
+    <div class="pull-left">
+        <h3>重要说明：</h3>
+        <h4>- 请在你想要换的SSR下面对应写上“想要”</h4>
+        <h4>- 当自身碎片变化时请及时更新，更新时只需填写改变项</h4>
+        <h4>- 奴良轩轩各种碎片求换雪童子！！！</h4>
+    </div>
 </div>
 
 <div class="content-body">
     <div class="container">
         <div class="row">
-            <main class="col-md-12">
-                <table class="table table-striped table-hover" contenteditable="true">
+            <main class="col-md-12 col-sm-12 col-xs-12">
+                <table style="width:1000px" class="table table-striped table-hover" contenteditable="true">
                     <thead>
 		                <tr>
 			                <th>昵称</th>
@@ -92,84 +97,79 @@
                         {% endfor %}
 	                </tbody>
                 </table>
-
-                <h2>更新我的碎片信息</h2>
-
-                <form class="col s12" action="update" method="post">
-                    {% csrf_token %}
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <label for="team_name">昵称</label>
-                            <input type="text" class="validate" name="name" value="">
+                 <h2>更新我的碎片信息</h2>
+                <div class="center-block " style="width:250px">
+                    <form class="col s12" action="update" method="post">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <label for="team_name">昵称一一一</label>
+                                <input type="text" class="validate" name="name" value="">
+                            </div>
+                            <div class="input-field col s12">
+                                <label for="team_name">彼岸花一一</label>
+                                <input placeholder="不更新" type="text" class="validate" name="bi_an_hua" value="">
+                            </div>
+                            <div class="input-field col s12">
+                                <label for="team_name">茨木童子一</label>
+                                <input placeholder="不更新" type="text" class="validate" name="ci_mu" value="">
+                            </div>
+                            <div class="input-field col s12">
+                                <label for="team_name">大天狗一一</label>
+                                <input placeholder="不更新" type="text" class="validate" name="da_gou" value="">
+                            </div>
+                            <div class="input-field col s12">
+                                <label for="team_name">花鸟卷一一</label>
+                                <input placeholder="不更新" type="text" class="validate" name="hua_niao" value="">
+                            </div>
+                            <div class="input-field col s12">
+                                <label for="team_name">荒一一一一</label>
+                                <input placeholder="不更新" type="text" class="validate" name="huang" value="">
+                            </div>
+                            <div class="input-field col s12">
+                                <label for="team_name">荒川一一一</label>
+                                <input placeholder="不更新" type="text" class="validate" name="huang_chuang" value="">
+                            </div>
+                            <div class="input-field col s12">
+                                <label for="team_name">辉夜姬一一</label>
+                                <input placeholder="不更新" type="text" class="validate" name="hui_ye_ji" value="">
+                            </div>
+                            <div class="input-field col s12">
+                                <label for="team_name">酒吞童子一</label>
+                                <input placeholder="不更新" type="text" class="validate" name="jiu_tun" value="">
+                            </div>
+                            <div class="input-field col s12">
+                                <label for="team_name">青行灯一一</label>
+                                <input placeholder="不更新" type="text" class="validate" name="qing_deng" value="">
+                            </div>
+                            <div class="input-field col s12">
+                                <label for="team_name">小鹿男一一</label>
+                                <input placeholder="不更新" type="text" class="validate" name="xiao_lu" value="">
+                            </div>
+                            <div class="input-field col s12">
+                                <label for="team_name">雪童子一一</label>
+                                <input placeholder="不更新" type="text" class="validate" name="xue_tong_zi" value="">
+                            </div>
+                            <div class="input-field col s12">
+                                <label for="team_name">阎魔一一一</label>
+                                <input placeholder="不更新" type="text" class="validate" name="yan_mo" value="">
+                            </div>
+                            <div class="input-field col s12">
+                                <label for="team_name">妖刀姬一一</label>
+                                <input placeholder="不更新" type="text" class="validate" name="yao_dao" value="">
+                            </div>
+                            <div class="input-field col s12">
+                                <label for="team_name">一目连一一</label>
+                                <input placeholder="不更新" type="text" class="validate" name="yi_mu" value="">
+                            </div>
+                            <div class="input-field col s12">
+                                <label for="team_name">玉藻前一一</label>
+                                <input placeholder="不更新" type="text" class="validate" name="yu_zao_qian" value="">
+                            </div>
                         </div>
-                        <div class="input-field col s12">
-                            <label for="team_name">彼岸花</label>
-                            <input type="text" class="validate" name="bi_an_hua" value="">
-                        </div>
-                        <div class="input-field col s12">
-                            <label for="team_name">茨木童子</label>
-                            <input type="text" class="validate" name="ci_mu" value="">
-                        </div>
-                        <div class="input-field col s12">
-                            <label for="team_name">大天狗</label>
-                            <input type="text" class="validate" name="da_gou" value="">
-                        </div>
-                        <div class="input-field col s12">
-                            <label for="team_name">花鸟卷</label>
-                            <input type="text" class="validate" name="hua_niao" value="">
-                        </div>
-                        <div class="input-field col s12">
-                            <label for="team_name">荒</label>
-                            <input type="text" class="validate" name="huang" value="">
-                        </div>
-                        <div class="input-field col s12">
-                            <label for="team_name">荒川</label>
-                            <input type="text" class="validate" name="huang_chuang" value="">
-                        </div>
-                        <div class="input-field col s12">
-                            <label for="team_name">辉夜姬</label>
-                            <input type="text" class="validate" name="hui_ye_ji" value="">
-                        </div>
-                        <div class="input-field col s12">
-                            <label for="team_name">酒吞童子</label>
-                            <input type="text" class="validate" name="jiu_tun" value="">
-                        </div>
-                        <div class="input-field col s12">
-                            <label for="team_name">青行灯</label>
-                            <input type="text" class="validate" name="qing_deng" value="">
-                        </div>
-                        <div class="input-field col s12">
-                            <label for="team_name">小鹿男</label>
-                            <input type="text" class="validate" name="xiao_lu" value="">
-                        </div>
-                        <div class="input-field col s12">
-                            <label for="team_name">雪童子</label>
-                            <input type="text" class="validate" name="xue_tong_zi" value="">
-                        </div>
-                        <div class="input-field col s12">
-                            <label for="team_name">阎魔</label>
-                            <input type="text" class="validate" name="yan_mo" value="">
-                        </div>
-                        <div class="input-field col s12">
-                            <label for="team_name">妖刀姬</label>
-                            <input type="text" class="validate" name="yao_dao" value="">
-                        </div>
-                        <div class="input-field col s12">
-                            <label for="team_name">一目连</label>
-                            <input type="text" class="validate" name="yi_mu" value="">
-                        </div>
-                        <div class="input-field col s12">
-                            <label for="team_name">玉藻前</label>
-                            <input type="text" class="validate" name="yu_zao_qian" value="">
-                        </div>
-                    </div>
-            <div class="row">
-                <button id="inv_btn" class="btn waves-effect waves-light" type="submit" name="action">更新
-                </button>
-            </div>
-
-
-        </form>
+                    </form>
+                </div>
+                <button style="background-color:#2981e4;color:white" id="inv_btn" class="btn btn-block" type="submit" name="action">更新</button>
             </main>
 
         </div>
