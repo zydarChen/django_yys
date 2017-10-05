@@ -24,12 +24,12 @@ SECRET_KEY = '=sra@_#m3rpdg1pt=3u@%tng!x4vx(l5@9w32_dve=_bg+ardf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = False
-#
-# ALLOWED_HOSTS = ['127.0.0.1', 'localhost ', 'yys.zydarChen.top', '39.108.130.183']
+
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost ', 'yys.zydarChen.top', '39.108.130.183']
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
