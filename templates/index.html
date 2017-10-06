@@ -54,43 +54,43 @@
                 <table style="width:1000px" class="table-condensed table table-striped table-hover" contenteditable="false">
                     <thead>
 		                <tr>
-			                <th style="position: absolute">昵称</th>
-		                	<th>彼岸花</th>
-		                	<th>茨木童子</th>
-		                	<th>大天狗</th>
-		                	<th>花鸟卷</th>
-		                	<th>荒</th>
-		                	<th>荒川</th>
-		                	<th>辉夜姬</th>
-		                	<th>酒吞童子</th>
-		                	<th>青行灯</th>
-			                <th>小鹿男</th>
-		                	<th>雪童子</th>
-		                	<th>阎魔</th>
-		                	<th>妖刀姬</th>
-			                <th>一目连</th>
-		                	<th>玉藻前</th>
+			                <th class="text-center" style="position: absolute; width: 100px; background-color: white;">昵称</th>
+		                	<th class="text-center" style="padding-left: 100px;">彼岸花</th>
+		                	<th class="text-center">茨木童子</th>
+		                	<th class="text-center">大天狗</th>
+		                	<th class="text-center">花鸟卷</th>
+		                	<th class="text-center">荒</th>
+		                	<th class="text-center">荒川</th>
+		                	<th class="text-center">辉夜姬</th>
+		                	<th class="text-center">酒吞童子</th>
+		                	<th class="text-center">青行灯</th>
+			                <th class="text-center">小鹿男</th>
+		                	<th class="text-center">雪童子</th>
+		                	<th class="text-center">阎魔</th>
+		                	<th class="text-center">妖刀姬</th>
+			                <th class="text-center">一目连</th>
+		                	<th class="text-center">玉藻前</th>
 		                </tr>
 	                </thead>
                     <tbody>
                         {% for table in table_list %}
                             <tr>
-                                <th style="position: absolute">{{ table.name }}</th>
-                                <th>{{ table.bi_an_hua }}</th>
-                                <th>{{ table.ci_mu }}</th>
-                                <th>{{ table.da_gou }}</th>
-                                <th>{{ table.hua_niao }}</th>
-                                <th>{{ table.huang }}</th>
-                                <th>{{ table.huang_chuang }}</th>
-                                <th>{{ table.hui_ye_ji }}</th>
-                                <th>{{ table.jiu_tun }}</th>
-                                <th>{{ table.qing_deng }}</th>
-                                <th>{{ table.xiao_lu }}</th>
-                                <th>{{ table.xue_tong_zi }}</th>
-                                <th>{{ table.yan_mo }}</th>
-                                <th>{{ table.yao_dao }}</th>
-                                <th>{{ table.yi_mu }}</th>
-                                <th>{{ table.yu_zao_qian }}</th>
+                                <th class="text-center" style="position: absolute; width: 100px; background-color: white;">{{ table.name }}</th>
+                                <th class="text-center" style="padding-left: 100px;">{{ table.bi_an_hua }}</th>
+                                <th class="text-center">{{ table.ci_mu }}</th>
+                                <th class="text-center">{{ table.da_gou }}</th>
+                                <th class="text-center">{{ table.hua_niao }}</th>
+                                <th class="text-center">{{ table.huang }}</th>
+                                <th class="text-center">{{ table.huang_chuang }}</th>
+                                <th class="text-center">{{ table.hui_ye_ji }}</th>
+                                <th class="text-center">{{ table.jiu_tun }}</th>
+                                <th class="text-center">{{ table.qing_deng }}</th>
+                                <th class="text-center">{{ table.xiao_lu }}</th>
+                                <th class="text-center">{{ table.xue_tong_zi }}</th>
+                                <th class="text-center">{{ table.yan_mo }}</th>
+                                <th class="text-center">{{ table.yao_dao }}</th>
+                                <th class="text-center">{{ table.yi_mu }}</th>
+                                <th class="text-center">{{ table.yu_zao_qian }}</th>
                             </tr>
                         {% empty %}
                             <div class="no-post">暂时还没有寮友添加数据！</div>
