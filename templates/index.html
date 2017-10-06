@@ -6,7 +6,7 @@
 
     <!-- meta -->
     <meta charset="UTF-8">
-    <meta name="viewport" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 {#    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">#}
 {#    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>#}
 {#    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>#}
@@ -50,7 +50,8 @@
     <div class="container">
         <div class="row">
             <main class="col-md-12 col-sm-12 col-xs-12">
-                <table style="width:1000px" class="table-condensed table table-striped table-hover" contenteditable="true">
+            <div class="table-responsive">
+                <table style="width:1000px" class="table-condensed table table-striped table-hover" contenteditable="false">
                     <thead>
 		                <tr>
 			                <th>昵称</th>
@@ -96,6 +97,7 @@
                         {% endfor %}
 	                </tbody>
                 </table>
+            </div>
                  <h2>更新我的碎片信息</h2>
                 <div class="center-block " style="width:250px">
                     <form class="col s12" action="update" method="post">
