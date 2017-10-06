@@ -1,172 +1,369 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <script src="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-
-</head>
-<body>
-<div class="container">
-    <header id="site-header">
-        <div class="row">
-            <div class="col-md-4 col-sm-5 col-xs-8">
-                <div class="logo">
-                    <h1><a href="index.html"><b>碎片登记</b></a></h1>
-                </div>
-                    <div class="pull-left">
-                        <h3>重要说明：</h3>
-                        <h4>- 请在你想要换的SSR下面对应写上“想要”</h4>
-                        <h4>- 当自身碎片变化时请及时更新，更新时只需填写改变项</h4>
-                        <h4>- 奴良轩轩各种碎片求换雪童子！！！</h4>
-                    </div>
-                </div><!-- col-md-4 -->
-        </div>
-    </header>
-</div>
-
-<div class="content-body">
-    <div class="container">
-        <div class="row">
-            <main class="col-md-12 col-sm-12 col-xs-12">
-                <table style="width:1000px" class="table-condensed table table-striped table-hover" contenteditable="true">
-                    <thead>
-		                <tr>
-			                <th>昵称</th>
-		                	<th>彼岸花</th>
-		                	<th>茨木童子</th>
-		                	<th>大天狗</th>
-		                	<th>花鸟卷</th>
-		                	<th>荒</th>
-		                	<th>荒川</th>
-		                	<th>辉夜姬</th>
-		                	<th>酒吞童子</th>
-		                	<th>青行灯</th>
-			                <th>小鹿男</th>
-		                	<th>雪童子</th>
-		                	<th>阎魔</th>
-		                	<th>妖刀姬</th>
-			                <th>一目连</th>
-		                	<th>玉藻前</th>
-		                </tr>
-	                </thead>
-                    <tbody>
-                        {% for table in table_list %}
-                            <tr>
-                                <th>{{ table.name }}</th>
-                                <th>{{ table.bi_an_hua }}</th>
-                                <th>{{ table.ci_mu }}</th>
-                                <th>{{ table.da_gou }}</th>
-                                <th>{{ table.hua_niao }}</th>
-                                <th>{{ table.huang }}</th>
-                                <th>{{ table.huang_chuang }}</th>
-                                <th>{{ table.hui_ye_ji }}</th>
-                                <th>{{ table.jiu_tun }}</th>
-                                <th>{{ table.qing_deng }}</th>
-                                <th>{{ table.xiao_lu }}</th>
-                                <th>{{ table.xue_tong_zi }}</th>
-                                <th>{{ table.yan_mo }}</th>
-                                <th>{{ table.yao_dao }}</th>
-                                <th>{{ table.yi_mu }}</th>
-                                <th>{{ table.yu_zao_qian }}</th>
-                            </tr>
-                        {% empty %}
-                            <div class="no-post">暂时还没有寮友添加数据！</div>
-                        {% endfor %}
-	                </tbody>
-                </table>
-                 <h2>更新我的碎片信息</h2>
-                <div class="center-block " style="width:250px">
-                    <form class="col s12" action="update" method="post">
-                        {% csrf_token %}
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <label for="team_name">昵称一一一</label>
-                                <input type="text" class="validate" name="name" value="">
-                            </div>
-                            <div class="input-field col s12">
-                                <label for="team_name">彼岸花一一</label>
-                                <input placeholder="不更新" type="text" class="validate" name="bi_an_hua" value="">
-                            </div>
-                            <div class="input-field col s12">
-                                <label for="team_name">茨木童子一</label>
-                                <input placeholder="不更新" type="text" class="validate" name="ci_mu" value="">
-                            </div>
-                            <div class="input-field col s12">
-                                <label for="team_name">大天狗一一</label>
-                                <input placeholder="不更新" type="text" class="validate" name="da_gou" value="">
-                            </div>
-                            <div class="input-field col s12">
-                                <label for="team_name">花鸟卷一一</label>
-                                <input placeholder="不更新" type="text" class="validate" name="hua_niao" value="">
-                            </div>
-                            <div class="input-field col s12">
-                                <label for="team_name">荒一一一一</label>
-                                <input placeholder="不更新" type="text" class="validate" name="huang" value="">
-                            </div>
-                            <div class="input-field col s12">
-                                <label for="team_name">荒川一一一</label>
-                                <input placeholder="不更新" type="text" class="validate" name="huang_chuang" value="">
-                            </div>
-                            <div class="input-field col s12">
-                                <label for="team_name">辉夜姬一一</label>
-                                <input placeholder="不更新" type="text" class="validate" name="hui_ye_ji" value="">
-                            </div>
-                            <div class="input-field col s12">
-                                <label for="team_name">酒吞童子一</label>
-                                <input placeholder="不更新" type="text" class="validate" name="jiu_tun" value="">
-                            </div>
-                            <div class="input-field col s12">
-                                <label for="team_name">青行灯一一</label>
-                                <input placeholder="不更新" type="text" class="validate" name="qing_deng" value="">
-                            </div>
-                            <div class="input-field col s12">
-                                <label for="team_name">小鹿男一一</label>
-                                <input placeholder="不更新" type="text" class="validate" name="xiao_lu" value="">
-                            </div>
-                            <div class="input-field col s12">
-                                <label for="team_name">雪童子一一</label>
-                                <input placeholder="不更新" type="text" class="validate" name="xue_tong_zi" value="">
-                            </div>
-                            <div class="input-field col s12">
-                                <label for="team_name">阎魔一一一</label>
-                                <input placeholder="不更新" type="text" class="validate" name="yan_mo" value="">
-                            </div>
-                            <div class="input-field col s12">
-                                <label for="team_name">妖刀姬一一</label>
-                                <input placeholder="不更新" type="text" class="validate" name="yao_dao" value="">
-                            </div>
-                            <div class="input-field col s12">
-                                <label for="team_name">一目连一一</label>
-                                <input placeholder="不更新" type="text" class="validate" name="yi_mu" value="">
-                            </div>
-                            <div class="input-field col s12">
-                                <label for="team_name">玉藻前一一</label>
-                                <input placeholder="不更新" type="text" class="validate" name="yu_zao_qian" value="">
-                            </div>
-                        </div>
-                        <button style="background-color:#2981e4;color:white" id="inv_btn" class="btn btn-block" type="submit" name="action">更新</button>
-                    </form>
-                </div>
-            </main>
-
-        </div>
-    </div>
-</div>
-<footer id="site-footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <p class="copyright">&copy 2017 - 不好吃の蛋蛋
-                </p>
+<html lang="zh-CN"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <meta name="Generator" content="EditPlus®">
+        <meta name="Author" content="">
+        <meta name="Keywords" content="">
+        <meta name="Description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <title>待产记录二列表</title>
+        <link href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <button type="button" class="btn btn-info navbar-btn" id="yuyue-button" style="backgroud-color: red;">返回</button>
             </div>
+        </nav>
+        <div class="table-responsive" style="margin-top: 50px;">
+            <table class="table table-bordered" id="daichanlist2-2table">
+                <thead>
+                    <tr>
+                        <th style="position: absolute; left: 0px; background-color: white; width: 89.2px;">日期</th>
+                        <th style="padding-left: 89.2px;">时间</th>
+                        <th>血压</th>
+                        <th>胎心</th>
+                        <th>肛查</th>
+                        <th>先露高低</th>
+                        <th>容受</th>
+                        <th>大小</th>
+                        <th>已破</th>
+                        <th>未破</th>
+                        <th>羊水颜色</th>
+                        <th>强度</th>
+                        <th>持续</th>
+                        <th>间歇</th>
+                        <th>膀胱充盈</th>
+                        <th>饮食</th>
+                        <th>睡眠</th>
+                        <th>处理</th>
+                        <th>检查者</th>
+                    </tr>
+                </thead>
+                <tbody id="app">
+                    <tr class="active">
+                        <td style="position: absolute; left: 0px; width: 89.2px; background-color: white;">2015-04-29</td>
+                        <td style="padding-left: 89.2px;">21:18</td>
+                        <td>120/80</td>
+                        <td>80</td>
+                        <td></td>
+                        <td>臀先露</td>
+                        <td></td>
+                        <td>4cm</td>
+                        <td>√</td>
+                        <td></td>
+                        <td></td>
+                        <td>中</td>
+                        <td></td>
+                        <td></td>
+                        <td>-1→0</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>测试</td>
+                    </tr><tr>
+                        <td style="position: absolute; left: 0px; width: 89.2px; background-color: white;">2015-04-29</td>
+                        <td style="padding-left: 89.2px;">21:50</td>
+                        <td>120/80</td>
+                        <td>90</td>
+                        <td></td>
+                        <td>臀先露</td>
+                        <td></td>
+                        <td>2cm</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>弱</td>
+                        <td></td>
+                        <td></td>
+                        <td>-1→0</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>测试</td>
+                    </tr><tr class="active">
+                        <td style="position: absolute; left: 0px; width: 89.2px; background-color: white;">2015-05-11</td>
+                        <td style="padding-left: 89.2px;">10:25</td>
+                        <td>120/80</td>
+                        <td>90</td>
+                        <td></td>
+                        <td>肩先露</td>
+                        <td></td>
+                        <td>2cm</td>
+                        <td>√</td>
+                        <td></td>
+                        <td></td>
+                        <td>中</td>
+                        <td></td>
+                        <td></td>
+                        <td>+2→+3</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>测试</td>
+                    </tr><tr>
+                        <td style="position: absolute; left: 0px; width: 89.2px; background-color: white;">2015-05-13</td>
+                        <td style="padding-left: 89.2px;">14:44</td>
+                        <td>120/80</td>
+                        <td>90</td>
+                        <td></td>
+                        <td>头先露</td>
+                        <td></td>
+                        <td>2cm</td>
+                        <td>√</td>
+                        <td></td>
+                        <td></td>
+                        <td>弱中</td>
+                        <td></td>
+                        <td></td>
+                        <td>-1→0</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>测试</td>
+                    </tr><tr class="active">
+                        <td style="position: absolute; left: 0px; width: 89.2px; background-color: white;">2015-05-13</td>
+                        <td style="padding-left: 89.2px;">15:22</td>
+                        <td>112/70</td>
+                        <td>140</td>
+                        <td></td>
+                        <td>头先露</td>
+                        <td></td>
+                        <td>1cm</td>
+                        <td></td>
+                        <td>√</td>
+                        <td></td>
+                        <td>中</td>
+                        <td></td>
+                        <td></td>
+                        <td>-3</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>殷慧兰</td>
+                    </tr><tr>
+                        <td style="position: absolute; left: 0px; width: 89.2px; background-color: white;">2015-05-22</td>
+                        <td style="padding-left: 89.2px;">09:26</td>
+                        <td>120/80</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>测试</td>
+                    </tr><tr class="active">
+                        <td style="position: absolute; left: 0px; width: 89.2px; background-color: white;">2015-05-26</td>
+                        <td style="padding-left: 89.2px;">15:54</td>
+                        <td>/</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>测试</td>
+                    </tr><tr>
+                        <td style="position: absolute; left: 0px; width: 89.2px; background-color: white;">2015-05-26</td>
+                        <td style="padding-left: 89.2px;">04:54</td>
+                        <td>/</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>测试</td>
+                    </tr><tr class="active">
+                        <td style="position: absolute; left: 0px; width: 89.2px; background-color: white;">2015-05-26</td>
+                        <td style="padding-left: 89.2px;">15:54</td>
+                        <td>/</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>孕妇入产房待产，身高：  cm，</td>
+                        <td>测试</td>
+                    </tr><tr>
+                        <td style="position: absolute; left: 0px; width: 89.2px; background-color: white;">2015-06-10</td>
+                        <td style="padding-left: 89.2px;">07:14</td>
+                        <td>120/80</td>
+                        <td>2</td>
+                        <td></td>
+                        <td>-2→-1</td>
+                        <td>薄</td>
+                        <td>1cm</td>
+                        <td></td>
+                        <td>√</td>
+                        <td>Ⅰ°→Ⅱ°</td>
+                        <td>弱中</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>(-)</td>
+                        <td>好</td>
+                        <td>差</td>
+                        <td></td>
+                        <td>测试</td>
+                    </tr><tr class="active">
+                        <td style="position: absolute; left: 0px; width: 89.2px; background-color: white;">2015-06-10</td>
+                        <td style="padding-left: 89.2px;">08:00</td>
+                        <td>/</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>厚</td>
+                        <td>未开</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>测试</td>
+                    </tr><tr>
+                        <td style="position: absolute; left: 0px; width: 89.2px; background-color: white;">2015-06-10</td>
+                        <td style="padding-left: 89.2px;">08:01</td>
+                        <td>/</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>测试</td>
+                    </tr><tr class="active">
+                        <td style="position: absolute; left: 0px; width: 89.2px; background-color: white;">2015-06-10</td>
+                        <td style="padding-left: 89.2px;">08:02</td>
+                        <td>/</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>测试</td>
+                    </tr><tr>
+                        <td style="position: absolute; left: 0px; width: 89.2px; background-color: white;">2015-07-02</td>
+                        <td style="padding-left: 89.2px;">20:16</td>
+                        <td>/</td>
+                        <td></td>
+                        <td></td>
+                        <td>-2→-1</td>
+                        <td></td>
+                        <td>3cm</td>
+                        <td>√</td>
+                        <td></td>
+                        <td>Ⅱ°</td>
+                        <td>弱</td>
+                        <td></td>
+                        <td></td>
+                        <td>(-)</td>
+                        <td></td>
+                        <td></td>
+                        <td>孕妇入产房待产，身高：  cm，复测宫高：  cm，腹围：  cm，疼痛评分：  分。告知分娩相关知识及风险，指导呼吸法减轻疼痛，孕妇及家属理解，有阴道分娩信心。</td>
+                        <td>测试</td>
+                    </tr><tr class="active">
+                        <td style="position: absolute; left: 0px; width: 89.2px; background-color: white;">2015-07-06</td>
+                        <td style="padding-left: 89.2px;">16:20</td>
+                        <td>127/60</td>
+                        <td>60</td>
+                        <td></td>
+                        <td>-3</td>
+                        <td></td>
+                        <td>未开</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>40</td>
+                        <td>5</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>孕妇入产房待产，身高：  cm，复测宫高：  cm，腹围：  cm，疼痛评分：  分。告知分娩相关知识及风险，指导呼吸法减轻疼痛，孕妇及家属理解，有阴道分娩信心。</td>
+                        <td>测试</td>
+                    </tr><tr>
+                        <td style="position: absolute; left: 0px; width: 89.2px; background-color: white;">2015-07-13</td>
+                        <td style="padding-left: 89.2px;">09:52</td>
+                        <td>/</td>
+                        <td></td>
+                        <td></td>
+                        <td>-1→0</td>
+                        <td>薄</td>
+                        <td>1cm</td>
+                        <td>√</td>
+                        <td></td>
+                        <td>Ⅱ°</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>孕妇入产房待产，身高：23  cm，复测宫高：  cm，腹围：  cm，疼痛评分：  分。告知分娩相关知识及风险，指导呼吸法减轻疼痛，孕妇及家属理解，有阴道分娩信心。</td>
+                        <td>测试</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-    </div>
-</footer>
-
-
-
-{#<script src="{% static 'js/script.js' %}"></script>#}
-</body>
-</html>
+</body></html>

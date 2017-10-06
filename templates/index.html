@@ -54,7 +54,7 @@
                 <table style="width:1000px" class="table-condensed table table-striped table-hover" contenteditable="false">
                     <thead>
 		                <tr>
-			                <th>昵称</th>
+			                <th style="position: absolute">昵称</th>
 		                	<th>彼岸花</th>
 		                	<th>茨木童子</th>
 		                	<th>大天狗</th>
@@ -75,7 +75,7 @@
                     <tbody>
                         {% for table in table_list %}
                             <tr>
-                                <th>{{ table.name }}</th>
+                                <th style="position: absolute">{{ table.name }}</th>
                                 <th>{{ table.bi_an_hua }}</th>
                                 <th>{{ table.ci_mu }}</th>
                                 <th>{{ table.da_gou }}</th>
